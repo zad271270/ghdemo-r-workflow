@@ -7,9 +7,28 @@ on:
         type: string
         required: true
         description: 'The name to greet'
+      age:
+        type: number
+        required: true
+        description: 'The age to greet'
+      super-secret:
+        type: string
+        required: true
+        description: 'The super secret to greet'
+    outputs:
+      reusable-job-output:
+        description: 'The output from the reusable job'
+        value: ${{ inputs.name }}
+    
+    
 
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, ${{ inputs.name }}"
+      - run: echo "Hello, ${{ inputs.age }}"
+      - run: echo "Hello, ${{ inputs.super-secret }}"
+    outputs:
+      name: ${{ inputs.name }}
+   

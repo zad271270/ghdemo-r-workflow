@@ -8,3 +8,8 @@ jobs:
     uses: ./.github/workflows/reusable-workflow.yml
     with:
       name: 'my beatyfull Pauly'
+      age: 25
+      super-secret: ${{ secrets.SUPER_SECRET }}
+    outputs:
+      reusable-job-output: ${{ steps.reusable-job.outputs.name }}
+    
