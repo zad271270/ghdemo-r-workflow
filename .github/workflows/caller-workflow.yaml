@@ -7,4 +7,4 @@ jobs:
   call-reusable-workflow:
     uses: ./.github/workflows/reusable-workflow.yml
     with:
-      name: 'my lovelly Pauly'
+      name: 'my beatyfull Pauly'
