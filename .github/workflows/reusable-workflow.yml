@@ -11,10 +11,6 @@ on:
         type: number
         required: true
         description: 'The age to greet'
-      super-secret:
-        type: string
-        required: true
-        description: 'The super secret to greet'
     outputs:
       reusable-job-output:
         description: 'The output from the reusable job'
