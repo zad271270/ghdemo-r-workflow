@@ -11,6 +11,11 @@ on:
         type: number
         required: true
         description: 'The age to greet'
+    secrets:
+      super-secret:
+        
+        required: false
+        description: 'The super secret to greet'
     outputs:
       reusable-job-output:
         description: 'The output from the reusable job'
@@ -25,10 +30,12 @@ jobs:
       reusable-job-output: ${{ steps.output.outputs.reusable-job-output }}
     steps:
       - id: name
-        run: echo "Hello, ${{ inputs.name }}"
+        run: echo "Hello, the name is ${{ inputs.name }}"
       - id: age
-        run: echo "Hello, ${{ inputs.age }}"
+        run: echo "Hello, the age is ${{ inputs.age }}"
       - id: output
-        run: echo "reusable-job-output=Hello, ${{ inputs.name }} have the age of ${{ inputs.age }}" >> $GITHUB_OUTPUT
+        run: echo "reusable-job-output=Hello, mi name is ${{ inputs.name }} and í'm  ${{ inputs.age }} years old" >> $GITHUB_OUTPUT
+      - id: secret
+        run: echo "super-secret=super-secret-value" >> $GITHUB_OUTPUT
       
       
