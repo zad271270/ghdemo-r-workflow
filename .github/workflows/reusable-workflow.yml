@@ -34,7 +34,7 @@ jobs:
       - id: age
         run: echo "Hello, the age is ${{ inputs.age }}"
       - id: output
-        run: echo "reusable-job-output=Hello, mi name is ${{ inputs.name }} and í'm  ${{ inputs.age }} years old" >> $GITHUB_OUTPUT
+        run: echo "reusable-job-output= ${{ inputs.name }} is ${{ inputs.age }} years old" >> $GITHUB_OUTPUT
       - id: secret
         run: echo "super-secret=super-secret-value" >> $GITHUB_OUTPUT
       
